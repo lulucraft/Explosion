@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Explosion.ViewModels
 {
-    public partial class AccueilViewModel : BaseViewModel
+    public partial class AccueilViewModel(IDialogService dialogService, INavigationService navigationService) : BaseViewModel(dialogService, navigationService)
     {
 
     }

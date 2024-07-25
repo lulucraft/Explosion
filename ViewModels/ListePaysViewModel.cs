@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Explosion.ViewModels
 {
-    public partial class ListePaysViewModel : BaseViewModel
+    public partial class ListePaysViewModel(IDialogService dialogService, INavigationService navigationService) : BaseViewModel(dialogService, navigationService)
     {
 
     }
