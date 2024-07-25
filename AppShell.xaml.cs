@@ -13,6 +13,7 @@
         {
             Routing.RegisterRoute("newevent", typeof(NewEventPage));
             Routing.RegisterRoute("afficherexplosion", typeof(FicheExplosionPage));
+            Routing.RegisterRoute("editionpays", typeof(EditionPaysPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

@@ -8,13 +8,16 @@
 
         public IExplosionService? ExplosionService;
 
+        public IPaysService? PaysService;
+
         [ObservableProperty]
         private string _title = string.Empty;
 
 
-        public BaseViewModel(IDialogService dialogService, INavigationService navigationService, IExplosionService explosionService) : this(dialogService, navigationService)
+        public BaseViewModel(IDialogService dialogService, INavigationService navigationService, IExplosionService explosionService, IPaysService paysService) : this(dialogService, navigationService)
         {
             ExplosionService = explosionService;
+            PaysService = paysService;
         }
     }
 }

@@ -39,6 +39,11 @@ namespace Explosion
             builder.Services.AddSingleton<ListeExplosionPage>();
             builder.Services.AddSingleton<FicheExplosionViewModel>();
             builder.Services.AddSingleton<FicheExplosionPage>();
+            builder.Services.AddSingleton<IPaysService, PaysService>();
+            builder.Services.AddSingleton<ListePaysPage>();
+            builder.Services.AddSingleton<ListePaysViewModel>();
+            builder.Services.AddSingleton<EditionPaysPage>();
+            builder.Services.AddSingleton<EditionPaysViewModel>();
 
             // Ajouter la configuration des secrets utilisateur
             var configuration = new ConfigurationBuilder()
