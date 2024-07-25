@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Explosion.Context", "..\Explosion.Context\Explosion.Context.csproj", "{5EC30372-840A-4E4D-BB36-53AC709763C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,19 @@ Global
 		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5EC30372-840A-4E4D-BB36-53AC709763C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC30372-840A-4E4D-BB36-53AC709763C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC30372-840A-4E4D-BB36-53AC709763C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC30372-840A-4E4D-BB36-53AC709763C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EC30372-840A-4E4D-BB36-53AC709763C6} = {B7507771-C538-4C86-ACB4-CA08D2D3B19E}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		        SolutionGuid = {6308BC6B-FE37-4637-B1D9-CFBC2299C2E3}
+		SolutionGuid = {4C918133-5137-41FE-924F-4CBE56571A7F}
 	EndGlobalSection
 EndGlobal
