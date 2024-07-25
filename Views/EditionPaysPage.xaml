@@ -9,9 +9,6 @@
     xmlns:local="clr-namespace:Explosion.Views"
     x:DataType="vm:EditionPaysViewModel"
     mc:Ignorable="d">
-    <ContentPage.BindingContext>
-        <vm:EditionPaysViewModel />
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <Label

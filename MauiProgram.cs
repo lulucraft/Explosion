@@ -34,6 +34,8 @@ namespace Explosion
             
             builder.Services.AddSingleton<AccueilViewModel>();
             builder.Services.AddSingleton<AccueilPage>();
+            builder.Services.AddSingleton<ListeExplosionViewModel>();
+            builder.Services.AddSingleton<ListeExplosionPage>();
 
             // Ajouter la configuration des secrets utilisateur
             var configuration = new ConfigurationBuilder()

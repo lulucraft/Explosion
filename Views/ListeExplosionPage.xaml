@@ -6,19 +6,69 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:Explosion.ViewModels"
+    xmlns:m="clr-namespace:Explosion.Context.Models;assembly=Explosion.Context"
     xmlns:local="clr-namespace:Explosion.Views"
     x:DataType="vm:ListeExplosionViewModel"
     mc:Ignorable="d">
-    <ContentPage.BindingContext>
-        <vm:ListeExplosionViewModel />
-    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label
-                HorizontalOptions="Center"
-                Text="Welcome to .NET MAUI!!!"
-                TextColor="Purple"
-                VerticalOptions="Center"/>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="500">
+            <CollectionView Grid.Column="1" ItemsSource="{Binding Explosions}">
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="*,*,*" HeightRequest="30">
+                        <Label
+                        Grid.Column="0"
+                        Text="Nom de l'essai"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Yellow200Accent}" />
+                        <Label
+                        Grid.Column="1"
+                        Text="Date"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Yellow200Accent}" />
+                        <BoxView
+                        HeightRequest="1"
+                        Color="{StaticResource Yellow100Accent}"
+                        Grid.ColumnSpan="3"
+                        VerticalOptions="End" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Explosion">
+                        <Grid ColumnDefinitions="*,*,*">
+                            <Label
+                            Grid.Column="0"
+                            Text="{Binding NomDeCode}"
+                            VerticalOptions="Center" />
+                            <!--<Label
+                            Grid.Column="1"
+                            Text="{Binding Prix, StringFormat='{0:F2} €'}"
+                            VerticalOptions="Center" />
+                            <Button
+                            Grid.Column="2"
+                            Text="Editer"
+                            VerticalOptions="Center"
+                            Command="{Binding EditerProduitCommand, Source={RelativeSource AncestorType={x:Type vm:ListeProduitsViewModel}}}"
+                            CommandParameter="{Binding .}"
+                            Margin="5"/>
+                            <BoxView HeightRequest="1"
+                                 Color="{StaticResource Yellow300Accent}"
+                                 Grid.ColumnSpan="3"
+                                 VerticalOptions="End" />-->
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--<Button
+            Text="Ajouter un produit"
+            Command="{Binding AjouterProduitCommand}"
+            Style="{StaticResource PrimaryAction}" />
+            <HorizontalStackLayout
+            HorizontalOptions="End">
+                <HorizontalStackLayout HorizontalOptions="End">
+                    <Label Text="Nombre de produits : " />
+                    <Label Text="{Binding Produits.Count}" />
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

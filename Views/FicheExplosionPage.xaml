@@ -9,9 +9,6 @@
     xmlns:local="clr-namespace:Explosion.Views"
     x:DataType="vm:FicheExplosionViewModel"
     mc:Ignorable="d">
-    <ContentPage.BindingContext>
-        <vm:FicheExplosionViewModel />
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <Label

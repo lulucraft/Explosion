@@ -26,6 +26,11 @@
         Uncomment the below section to enable Shell Flyout item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <FlyoutItem Title="Liste Explosions">
+        <ShellContent
+            ContentTemplate="{DataTemplate vw:ListeExplosionPage}"
+            Route="listeexplosions" />
+    </FlyoutItem>
     <FlyoutItem Title="Calendar">
         <ShellContent
             ContentTemplate="{DataTemplate vw:EventsPage}"
