@@ -26,6 +26,11 @@
         Uncomment the below section to enable Shell Flyout item(s)
         And ensure appropriate page definitions are available for it work as expected
     -->
+    <FlyoutItem Title="Accueil">
+        <ShellContent
+            ContentTemplate="{DataTemplate vw:AccueilPage}"
+            Route="Accueil" />
+    </FlyoutItem>
     <FlyoutItem Title="Liste Explosions">
         <ShellContent
             ContentTemplate="{DataTemplate vw:ListeExplosionPage}"
@@ -35,11 +40,6 @@
         <ShellContent
             ContentTemplate="{DataTemplate vw:EventsPage}"
             Route="home" />
-    </FlyoutItem>
-    <FlyoutItem Title="Accueil">
-        <ShellContent
-            ContentTemplate="{DataTemplate vw:AccueilPage}"
-            Route="Accueil" />
     </FlyoutItem>
     <FlyoutItem Title="Search">
         <ShellContent

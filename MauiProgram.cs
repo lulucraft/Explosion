@@ -36,6 +36,7 @@ namespace Explosion
             builder.Services.AddSingleton<AccueilPage>();
             builder.Services.AddSingleton<ListeExplosionViewModel>();
             builder.Services.AddSingleton<ListeExplosionPage>();
+            builder.Services.AddSingleton<IExplosionService, ExplosionService>();
 
             // Ajouter la configuration des secrets utilisateur
             var configuration = new ConfigurationBuilder()
@@ -44,11 +45,13 @@ namespace Explosion
             builder.Configuration.AddConfiguration(configuration);
 
             // Configurer le contexte de base de données
-            object value = builder.Services.AddDbContext<TpExplosionContext>(options =>
+            object dbContext = builder.Services.AddDbContext<TpExplosionContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             // Enregistrer le service de configuration pour l'injection de dépendances
             builder.Services.AddSingleton<IConfiguration>(configuration);
+
+            //_serviceProvider = builder.Services.BuildServiceProvider();
 
 #if DEBUG
             builder.Logging.AddDebug();
@@ -56,5 +59,6 @@ namespace Explosion
 
             return builder.Build();
         }
+
     }
 }

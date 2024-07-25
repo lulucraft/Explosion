@@ -1,29 +1,23 @@
-﻿using Explosion.Context.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace Explosion.ViewModels
 {
     public partial class ListeExplosionViewModel : BaseViewModel
     {
-        private readonly TpExplosionContext _dbContext;
+        private readonly IExplosionService _explosionService;
 
         [ObservableProperty]
-        private ObservableCollection<Explosion.Context.Models.Explosion>? _explosions;
+        private ObservableCollection<Context.Models.Explosion>? _explosions;
 
-        public ListeExplosionViewModel(IDialogService dialogService, INavigationService navigationService) : base(dialogService, navigationService)
+        public ListeExplosionViewModel(IDialogService dialogService, INavigationService navigationService, IExplosionService explosionService) : base(dialogService, navigationService, explosionService)
         {
-            // Remplacez cela par votre logique de récupération de données à partir de Explosion.Context
-            using var context = new TpExplosionContext();
-            _dbContext = context;
-            //Explosions = new ObservableCollection<Explosion.Context.Models.Explosion>(context.Explosions.ToList());
+            _explosionService = explosionService;
             LoadData();
         }
 
         private void LoadData()
         {
-            Explosions = new ObservableCollection<Explosion.Context.Models.Explosion>(_dbContext.Explosions.ToList());
+            Explosions = new ObservableCollection<Context.Models.Explosion>([.. _explosionService.GetExplosions()]);//_dbContext.Explosions.Include(e => e.IdSiteNavigation)
         }
     }
 }
