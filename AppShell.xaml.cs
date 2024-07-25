@@ -12,6 +12,7 @@
         private void RegisterRoutes()
         {
             Routing.RegisterRoute("newevent", typeof(NewEventPage));
+            Routing.RegisterRoute("afficherexplosion", typeof(FicheExplosionPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

@@ -6,23 +6,29 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:Explosion.ViewModels"
+    xmlns:conv="clr-namespace:Explosion.Converters"
     xmlns:m="clr-namespace:Explosion.Context.Models;assembly=Explosion.Context"
     xmlns:local="clr-namespace:Explosion.Views"
     x:DataType="vm:ListeExplosionViewModel"
     mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:BooleanToYesNoConverter x:Key="BoolToYesNo"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="500">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="1000">
             <CollectionView Grid.Column="1" ItemsSource="{Binding Explosions}">
                 <CollectionView.Header>
                     <Grid
-                        ColumnDefinitions="*,*,*,*"
+                        ColumnDefinitions="*,*,*,*,*,*,*,*"
                         HeightRequest="45">
                         <Label
                             Grid.Column="0"
                             Text="Nom de l'essai"
                             FontAttributes="Bold"
                             TextColor="{StaticResource Yellow200Accent}"
-                            VerticalOptions="Center" />
+                            VerticalOptions="Center"/>
                         <Label
                             Grid.Column="1"
                             Text="Date"
@@ -40,16 +46,34 @@
                             FontAttributes="Bold"
                             TextColor="{StaticResource Yellow200Accent}"
                             VerticalOptions="Center" />
+                        <Label
+                            Grid.Column="4"
+                            Text="Type tir"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Yellow200Accent}"
+                            VerticalOptions="Center" />
+                        <Label
+                            Grid.Column="5"
+                            Text="Catégorie tir"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Yellow200Accent}"
+                            VerticalOptions="Center" />
+                        <Label
+                            Grid.Column="6"
+                            Text="Bombe fission"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Yellow200Accent}"
+                            VerticalOptions="Center" />
                         <BoxView
                             HeightRequest="1"
                             Color="{StaticResource Yellow100Accent}"
-                            Grid.ColumnSpan="4"
+                            Grid.ColumnSpan="8"
                             VerticalOptions="End" />
                     </Grid>
                 </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="m:Explosion">
-                        <Grid ColumnDefinitions="*,*,*,*">
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*,*">
                             <Label
                                 Grid.Column="0"
                                 Text="{Binding NomDeCode}"
@@ -66,17 +90,30 @@
                                 Grid.Column="3"
                                 Text="{Binding IdSiteNavigation.Designation}"
                                 VerticalOptions="Center" />
-                            <!--<Button
-                            Grid.Column="2"
-                            Text="Editer"
-                            VerticalOptions="Center"
-                            Command="{Binding EditerProduitCommand, Source={RelativeSource AncestorType={x:Type vm:ListeProduitsViewModel}}}"
-                            CommandParameter="{Binding .}"
-                            Margin="5"/>
-                            <BoxView HeightRequest="1"
-                                 Color="{StaticResource Yellow300Accent}"
-                                 Grid.ColumnSpan="3"
-                                 VerticalOptions="End" />-->
+                            <Label
+                                Grid.Column="4"
+                                Text="{Binding IdTypeNavigation.Libelle}"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Column="5"
+                                Text="{Binding IdCategorieNavigation.Nom}"
+                                VerticalOptions="Center" />
+                            <Label
+                                Grid.Column="6"
+                                Text="{Binding EstFission, Converter={StaticResource BoolToYesNo}}"
+                                VerticalOptions="Center" />
+                            <Button
+                                Grid.Column="7"
+                                Text="Consulter la fiche"
+                                VerticalOptions="Center"
+                                Command="{Binding AfficherExplosionCommand, Source={RelativeSource AncestorType={x:Type vm:ListeExplosionViewModel}}}"
+                                CommandParameter="{Binding .}"
+                                Margin="5" />
+                            <BoxView
+                                HeightRequest="1"
+                                Color="{StaticResource Yellow300Accent}"
+                                Grid.ColumnSpan="8"
+                                VerticalOptions="End" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

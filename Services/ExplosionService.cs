@@ -14,7 +14,7 @@ namespace Explosion.Services
 
         public List<Context.Models.Explosion> GetExplosions()
         {
-            return [.. _context.Explosions.Include(e => e.IdSiteNavigation)];
+            return [.. _context.Explosions.Include(e => e.IdSiteNavigation).Include(e => e.IdTypeNavigation).Include(e => e.IdCategorieNavigation)];
         }
     }
 }

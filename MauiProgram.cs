@@ -32,11 +32,13 @@ namespace Explosion
             builder.Services.AddTransient<NewEventViewModel>();
             builder.Services.AddTransient<NewEventPage>();
             
+            builder.Services.AddSingleton<IExplosionService, ExplosionService>();
             builder.Services.AddSingleton<AccueilViewModel>();
             builder.Services.AddSingleton<AccueilPage>();
             builder.Services.AddSingleton<ListeExplosionViewModel>();
             builder.Services.AddSingleton<ListeExplosionPage>();
-            builder.Services.AddSingleton<IExplosionService, ExplosionService>();
+            builder.Services.AddSingleton<FicheExplosionViewModel>();
+            builder.Services.AddSingleton<FicheExplosionPage>();
 
             // Ajouter la configuration des secrets utilisateur
             var configuration = new ConfigurationBuilder()
