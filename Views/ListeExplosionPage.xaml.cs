@@ -1,8 +1,8 @@
 ﻿namespace Explosion.Views
 {
-    public partial class ExplosionPage : ContentPage
+    public partial class ListeExplosionPage : ContentPage
     {
-        public ExplosionPage()
+        public ListeExplosionPage()
         {
             InitializeComponent();
         }

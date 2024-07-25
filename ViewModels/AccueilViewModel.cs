@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Explosion.ViewModels
 {
-    public partial class ExplosionViewModel : BaseViewModel
+    public partial class AccueilViewModel : BaseViewModel
     {
 
     }
