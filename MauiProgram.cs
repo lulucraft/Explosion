@@ -29,6 +29,9 @@ namespace Explosion
             builder.Services.AddTransient<NewEventViewModel>();
             builder.Services.AddTransient<NewEventPage>();
 
+            builder.Services.AddSingleton<AccueilViewModel>();
+            builder.Services.AddSingleton<AccueilPage>();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
