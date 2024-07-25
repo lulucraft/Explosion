@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Explosion", "Explosion.csproj", "{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B7507771-C538-4C86-ACB4-CA08D2D3B19E}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6074AD-A4D5-45AE-B1BE-7FE571A35627}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		        SolutionGuid = {6308BC6B-FE37-4637-B1D9-CFBC2299C2E3}
+	EndGlobalSection
+EndGlobal
