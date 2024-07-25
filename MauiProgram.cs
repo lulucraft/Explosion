@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Explosion.Context.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace Explosion
 {
@@ -28,9 +31,22 @@ namespace Explosion
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<NewEventViewModel>();
             builder.Services.AddTransient<NewEventPage>();
-
+            
             builder.Services.AddSingleton<AccueilViewModel>();
             builder.Services.AddSingleton<AccueilPage>();
+
+            // Ajouter la configuration des secrets utilisateur
+            var configuration = new ConfigurationBuilder()
+                .Build();
+
+            builder.Configuration.AddConfiguration(configuration);
+
+            // Configurer le contexte de base de données
+            object value = builder.Services.AddDbContext<TpExplosionContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            // Enregistrer le service de configuration pour l'injection de dépendances
+            builder.Services.AddSingleton<IConfiguration>(configuration);
 
 #if DEBUG
             builder.Logging.AddDebug();
