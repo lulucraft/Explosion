@@ -17,6 +17,7 @@ namespace Explosion
                    {
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                        fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
+                       fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIcons");
                    });
 
             builder.Services.AddSingleton<IDialogService, DialogService>();
