@@ -17,7 +17,8 @@ namespace Explosion
                    {
                        fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                        fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
-                       fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIcons");
+                       fonts.AddFont("MaterialDesign-Webfont.ttf", "MaterialDesignIcons");
+                       fonts.AddFont("FontAwesome-Solid900.ttf", "FontAwesomeIcons");
                    });
 
             builder.Services.AddSingleton<IDialogService, DialogService>();
@@ -58,8 +59,6 @@ namespace Explosion
 
             // Enregistrer le service de configuration pour l'injection de dépendances
             builder.Services.AddSingleton<IConfiguration>(configuration);
-
-            //_serviceProvider = builder.Services.BuildServiceProvider();
 
 #if DEBUG
             builder.Logging.AddDebug();

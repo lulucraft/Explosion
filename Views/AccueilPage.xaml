@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:Explosion.ViewModels"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:local="clr-namespace:Explosion.Views"
+    xmlns:helpers="clr-namespace:Explosion.Helpers"
     x:DataType="vm:AccueilViewModel"
     mc:Ignorable="d">
 
@@ -19,29 +21,37 @@
                        FontSize="24"
                        Margin="10"
                        HorizontalOptions="Center"
-                       VerticalOptions="Start"/>
-
+                       VerticalOptions="Start" />
                 <Image Source="explosion.png"
                    WidthRequest="400"
-                   HeightRequest="400"
-                   />
-
+                   HeightRequest="400" />
             </Grid>
             <HorizontalStackLayout>
-            <Button Text="Liste des explosions"
+                <Button Text="Liste des explosions"
                     Command="{Binding ButtonlisteexplosionCommand}"
                     HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"/>
-            <Button Text="Administration des pays"
+                    Style="{StaticResource PrimaryAction}">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="MaterialDesignIcons" Glyph="{x:Static helpers:MaterialDesignIcons.Bomb}" Size="26" />
+                    </Button.ImageSource>
+                </Button>
+                <Button Text="Administration des pays"
                     Command="{Binding ButtonlistepaysCommand}"
                     HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"/>
-            <Button Text="Quitter"
+                    Style="{StaticResource PrimaryAction}">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="MaterialDesignIcons" Glyph="{x:Static helpers:MaterialDesignIcons.Flag}" Size="26" />
+                    </Button.ImageSource>
+                </Button>
+                <Button Text="Quitter"
                     Command="{Binding ButtonquitterCommand}"
                     HorizontalOptions="Center"
-                    Style="{StaticResource PrimaryAction}"/>
+                    Style="{StaticResource PrimaryAction}">
+                    <Button.ImageSource>
+                        <FontImageSource FontFamily="MaterialDesignIcons" Glyph="{x:Static helpers:MaterialDesignIcons.Cancel}" Size="26" />
+                    </Button.ImageSource>
+                </Button>
             </HorizontalStackLayout>
-
 
 
         </StackLayout>
